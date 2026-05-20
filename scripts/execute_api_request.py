@@ -1,9 +1,14 @@
 import sys
 import os
 import json
-import yaml
 import subprocess
 import re
+
+try:
+    import yaml
+except ImportError:
+    print("Error: PyYAML is not installed. Please run 'pip install PyYAML'.")
+    sys.exit(1)
 
 def execute_request(file_path):
     if not os.path.exists(file_path):
